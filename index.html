@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kennessy Ebooks Store - Farming & Educational Ebooks for Africa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-book-open"></i>
+                <span>Kennessy Ebooks</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#ebooks">Ebooks</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="cart-icon" onclick="toggleCart()"><i class="fas fa-shopping-cart"></i><span id="cart-count" class="cart-badge">0</span></a></li>
+            </ul>
+            <div class="language-selector">
+                <select id="language" onchange="changeLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="sw">Swahili</option>
+                    <option value="yo">Yorùbá</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 data-i18n="hero-title">Quality Farming & Educational Ebooks for Africa</h1>
+            <p data-i18n="hero-subtitle">Learn, Grow, and Succeed with Our Premium Ebook Collection</p>
+            <button class="btn btn-primary" onclick="document.getElementById('ebooks').scrollIntoView()">Browse Ebooks</button>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <h3>500+</h3>
+                <p data-i18n="stat-ebooks">Ebooks Available</p>
+            </div>
+            <div class="stat">
+                <h3>50K+</h3>
+                <p data-i18n="stat-readers">Active Readers</p>
+            </div>
+            <div class="stat">
+                <h3>15+</h3>
+                <p data-i18n="stat-countries">African Countries</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countries Section -->
+    <section class="countries-served">
+        <div class="container">
+            <h2 data-i18n="countries-title">We Serve Across Africa</h2>
+            <div class="countries-grid">
+                <div class="country-card">
+                    <h3>Nigeria</h3>
+                    <p>₦ NGN</p>
+                </div>
+                <div class="country-card">
+                    <h3>Kenya</h3>
+                    <p>KES Ksh</p>
+                </div>
+                <div class="country-card">
+                    <h3>Ghana</h3>
+                    <p>₵ GHS</p>
+                </div>
+                <div class="country-card">
+                    <h3>Uganda</h3>
+                    <p>USh UGX</p>
+                </div>
+                <div class="country-card">
+                    <h3>South Africa</h3>
+                    <p>R ZAR</p>
+                </div>
+                <div class="country-card">
+                    <h3>Tanzania</h3>
+                    <p>TSh TZS</p>
+                </div>
+                <div class="country-card">
+                    <h3>Cameroon</h3>
+                    <p>Fr XAF</p>
+                </div>
+                <div class="country-card">
+                    <h3>Ivory Coast</h3>
+                    <p>Fr CFA XOF</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ebooks Catalog -->
+    <section id="ebooks" class="ebooks-section">
+        <div class="container">
+            <h2 data-i18n="ebooks-title">Our Ebook Collection</h2>
+            <div class="filters">
+                <select id="category-filter" onchange="filterEbooks()">
+                    <option value="all" data-i18n="filter-all">All Categories</option>
+                    <option value="farming" data-i18n="filter-farming">Farming</option>
+                    <option value="education" data-i18n="filter-education">Education</option>
+                    <option value="business" data-i18n="filter-business">Business</option>
+                    <option value="health" data-i18n="filter-health">Health</option>
+                </select>
+                <input type="text" id="search-box" placeholder="Search ebooks..." onkeyup="filterEbooks()">
+            </div>
+            <div id="ebooks-grid" class="ebooks-grid"></div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2 data-i18n="cart-title">Shopping Cart</h2>
+            <div id="cart-items" class="cart-items"></div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span data-i18n="subtotal">Subtotal:</span>
+                    <span id="subtotal">₦0</span>
+                </div>
+                <div class="summary-row">
+                    <span data-i18n="tax">Tax:</span>
+                    <span id="tax">₦0</span>
+                </div>
+                <div class="summary-row total">
+                    <span data-i18n="total">Total:</span>
+                    <span id="total">₦0</span>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="proceedToCheckout()" data-i18n="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Section -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content checkout-form">
+            <span class="close" onclick="closeCheckout()">&times;</span>
+            <h2 data-i18n="checkout-title">Checkout</h2>
+            <form id="checkout-form" onsubmit="handleCheckout(event)">
+                <div class="form-group">
+                    <label for="email" data-i18n="email-label">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="fullname" data-i18n="fullname-label">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" data-i18n="phone-label">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="country" data-i18n="country-label">Country:</label>
+                    <select id="country" name="country" required>
+                        <option value="NG">Nigeria</option>
+                        <option value="KE">Kenya</option>
+                        <option value="GH">Ghana</option>
+                        <option value="UG">Uganda</option>
+                        <option value="ZA">South Africa</option>
+                        <option value="TZ">Tanzania</option>
+                        <option value="CM">Cameroon</option>
+                        <option value="CI">Ivory Coast</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="payment-method" data-i18n="payment-label">Payment Method:</label>
+                    <select id="payment-method" name="payment-method" onchange="updatePaymentUI()" required>
+                        <option value="card">Credit/Debit Card</option>
+                        <option value="mobile-money">Mobile Money</option>
+                        <option value="bank-transfer">Bank Transfer</option>
+                        <option value="paypal">PayPal</option>
+                    </select>
+                </div>
+                <div id="payment-ui"></div>
+                <button type="submit" class="btn btn-primary" data-i18n="complete-payment">Complete Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 data-i18n="about-title">About Kennessy Ebooks</h2>
+            <p data-i18n="about-text">We are committed to providing high-quality, affordable ebooks to learners, farmers, and entrepreneurs across Africa. Our collection includes farming techniques, educational materials, and business guides tailored for African markets.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 data-i18n="contact-title">Contact Us</h2>
+            <form onsubmit="handleContactSubmit(event)">
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary" data-i18n="send-message">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Kennessy Ebooks Store. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="i18n.js"></script>
+    <script src="payment-handler.js"></script>
+    <script src="cart-manager.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

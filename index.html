@@ -3,78 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kennessy Ebooks Store</title>
+<title>Kennessy Ebooks Store | Practical Ebooks by Kenneth Chiakwa</title>
+<meta name="description" content="Practical ebooks for Farmers, Teachers and Entrepreneurs in Africa. Broiler, Layers, Agric Science, Economics, Natural Health. Author: Kenneth Chiakwa BSc, MSc, PhD Candidate.">
 <style>
-body{font-family:Arial,sans-serif;margin:0;background:#F1F8E9;color:#333}
-header{background:#2E7D32;color:#fff;padding:20px;text-align:center}
-nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:bold}
-.hero{background:#2E7D32;color:#fff;text-align:center;padding:60px 20px}
-.btn{background:#FFA000;color:#fff;padding:12px 24px;border-radius:5px;text-decoration:none;font-weight:bold;display:inline-block;margin:10px}
-.books{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:40px 20px;max-width:1100px;margin:auto}
-.book-card{background:#fff;border:1px solid #ddd;border-radius:10px;padding:20px;text-align:center}
-.price{color:#2E7D32;font-size:20px;font-weight:bold}
-.badge{background:red;color:#fff;padding:3px 8px;border-radius:5px;font-size:12px}
-footer{background:#1B5E20;color:#fff;text-align:center;padding:20px}
+    :root {--primary: #2E7D32; --secondary: #FFA000; --dark: #1B5E20; --light: #F1F8E9; --text: #333;}
+    * {margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+    body {color: var(--text); line-height:1.6; background:#fff;}
+    .container {width:90%; max-width:1100px; margin:0 auto; padding:20px;}
+    header {background:var(--primary); color:#fff; padding:15px 0; position:sticky; top:0; z-index:1000;}
+    nav {display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;}
+    .logo {display:flex; align-items:center; gap:10px; font-size:1.3rem; font-weight:bold;}
+    nav ul {list-style:none; display:flex; gap:20px;}
+    nav a {color:#fff; text-decoration:none; font-weight:500;} nav a:hover {color: var(--secondary);}
+    .hero {background:var(--primary); color:#fff; text-align:center; padding:90px 20px;}
+    .hero h2 {font-size:2.4rem; margin-bottom:15px;}
+    .btn {display:inline-block; background:var(--secondary); color:#fff; padding:14px 28px; border-radius:5px; text-decoration:none; font-weight:bold; margin:10px 5px; border:none; cursor:pointer;}
+    .btn:hover {background:#e69100;} .btn-outline {background:transparent; border:2px solid #fff;}
+    .btn-call {background:#0d6efd;}
+    .badge {background:#D32F2F; color:#fff; padding:5px 10px; border-radius:5px; font-size:0.8rem; margin-left:5px;}
+    section {padding:70px 0;} section h3 {text-align:center; font-size:2.2rem; color:var(--dark); margin-bottom:40px;}
+    .books {display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px;}
+    .book-card {border:1px solid #ddd; border-radius:12px; padding:25px; background:var(--light); text-align:center; box-shadow:0 2px 5px rgba(0,0,0,0.05);}
+    .book-card h4 {color:var(--primary); margin-bottom:10px; font-size:1.2rem; min-height:45px;}
+    .category {font-size:0.85rem; background:var(--secondary); color:#fff; padding:5px 12px; border-radius:15px; display:inline-block; margin-bottom:12px; font-weight:600; text-transform:uppercase;}
+    .cat-farming{background:#2E7D32} .cat-education{background:#1976D2} .cat-health{background:#C2185B} .cat-business{background:#F57C00}
+    .price {font-size:1.3rem; color:var(--dark); font-weight:bold; margin:10px 0;}
+    .contact-info p {margin:12px 0; font-size:1.1rem;} .contact-info b {color:var(--primary);}
+    .about {background:var(--light); text-align:center;}
+    .about h4 {color:var(--primary); font-size:1.5rem; margin-bottom:15px;}
+    footer {background:var(--dark); color:#fff; text-align:center; padding:25px 0;}
+    @media(max-width:768px){ nav ul{display:none;} .hero h2{font-size:1.8rem;} }
 </style>
 </head>
 <body>
 
 <header>
-<h1>📚 Kennessy Ebooks Store</h1>
-<nav><a href="#home">Home</a><a href="#books">Books</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+    <div class="container">
+        <nav>
+            <div class="logo">📚 Kennessy Ebooks Store</div>
+            <ul>
+                <li><a href="#home">Home</a></li><li><a href="#books">Books</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <section class="hero" id="home">
-<h2>Practical Ebooks for Farmers & Teachers in Africa</h2>
-<p>By Kenneth Chiakwa - BSc, MSc Agric Economist & 15+ Years Teacher</p>
-<a href="#books" class="btn">Shop Now</a>
-<a href="https://wa.me/2348144811019" class="btn">WhatsApp 08144811019</a>
+    <div class="container">
+        <h2>Practical Ebooks for Farmers, Teachers & Entrepreneurs</h2>
+        <p>Actionable knowledge written by an Agricultural Economist and 15+ Year Educationist to help you succeed in Nigeria & Africa</p>
+        <a href="#books" class="btn">Shop Now <span class="badge">LAUNCH SALE</span></a>
+        <a href="https://wa.me/2348144811019" target="_blank" class="btn btn-outline">Chat on WhatsApp</a>
+    </div>
 </section>
 
 <section id="books">
-<h2 style="text-align:center;">Our Ebooks</h2>
-<div class="books">
+    <div class="container">
+        <h3>Our Ebooks</h3>
+        <div class="books">
+            
+            <div class="book-card">
+                <span class="category cat-farming">Farming</span>
+                <h4>Complete Broiler Production Guide</h4>
+                <p>From Day Old Chick to Harvest. Step-by-step guide to raise healthy broilers and maximize profit in 8 weeks. Includes feed formulation, vaccination schedule & marketing strategy.</p>
+                <p class="price">₦2,500 <span class="badge">Launch Price</span></p>
+                <a href="https://selar.com/12787117fs" target="_blank" class="btn">Buy on Selar</a>
+            </div>
 
-<div class="book-card">
-<h3>Complete Broiler Production Guide</h3>
-<p>From Day Old to Harvest. Feed chart + Vaccination + Marketing</p>
-<p class="price"><s>₦3,500</s> ₦2,500 <span class="badge">Launch Price</span></p>
-<a href="https://selar.com/12787117fs" target="_blank" class="btn">Buy on Selar</a>
-</div>
+            <div class="book-card">
+                <span class="category cat-farming">Farming</span>
+                <h4>Complete Layers Production Guide</h4>
+                <p>Master the business of egg production. From brooding to point of lay, feeding, housing, disease control, record keeping and profitable egg marketing for sustainable income.</p>
+                <p class="price">₦2,500 <span class="badge">Launch Price</span></p>
+                <a href="#" class="btn" style="background:#9E9E9E;">Coming Soon</a>
+            </div>
 
-<div class="book-card">
-<h3>Complete Layers Production Guide</h3>
-<p>From Day Old to Point of Lay & Egg Production</p>
-<p class="price">₦2,500 <span class="badge">Launch Price</span></p>
-<a href="#" class="btn" style="background:#ccc;">Coming Soon</a>
-</div>
+            <div class="book-card">
+                <span class="category cat-education">Education</span>
+                <h4>Agricultural Science Lesson Notes SS1-SS3</h4>
+                <p>Comprehensive, simplified and WAEC/NECO focused lesson notes for teachers and students. Covers all topics with diagrams, examples and explanations.</p>
+                <p class="price">Contact for Price</p>
+                <a href="https://wa.me/2348144811019" target="_blank" class="btn">Inquire on WhatsApp</a>
+            </div>
 
-<div class="book-card">
-<h3>Natural Poultry Health Guide</h3>
-<p>Herbal and Traditional Remedies for Common Poultry Diseases</p>
-<p class="price">₦2,500</p>
-<a href="#" class="btn" style="background:#ccc;">Coming Soon</a>
-</div>
+            <div class="book-card">
+                <span class="category cat-education">Education</span>
+                <h4>Economics Lesson Notes SS1-SS3</h4>
+                <p>Complete and simplified Economics lesson notes for Secondary School. Covers all SS1 to SS3 topics for effective teaching and learning.</p>
+                <p class="price">Contact for Price</p>
+                <a href="https://wa.me/2348144811019" target="_blank" class="btn">Inquire on WhatsApp</a>
+            </div>
 
-</div>
+            <div class="book-card">
+                <span class="category cat-education">Education</span>
+                <h4>WAEC Economics Past Questions 2010-2025</h4>
+                <p>15 Years of WAEC Economics Theory and Objectives with detailed answers and marking scheme. The ultimate guide for exam success.</p>
+                <p class="price">Contact for Price</p>
+                <a href="https://wa.me/2348144811019" target="_blank" class="btn">Inquire on WhatsApp</a>
+            </div>
+
+            <div class="book-card">
+                <span class="category cat-health">Health</span>
+                <h4>Natural Poultry Health Guide</h4>
+                <p>Herbal and Traditional Remedies for Common Poultry Diseases. Reduce antibiotic costs. Learn low-cost, effective and natural treatments using local herbs for healthy birds.</p>
+                <p class="price">Contact for Price</p>
+                <a href="https://wa.me/2348144811019" target="_blank" class="btn">Inquire on WhatsApp</a>
+            </div>
+
+            <div class="book-card">
+                <span class="category cat-business">Business</span>
+                <h4>Poultry Business & Marketing Strategy</h4>
+                <p>How to start, run and scale a profitable poultry business in Nigeria. Covers costing, pricing, finding customers, packaging, and avoiding common losses.</p>
+                <p class="price">₦3,000</p>
+                <a href="#" class="btn" style="background:#9E9E9E;">Coming Soon</a>
+            </div>
+
+        </div>
+    </div>
 </section>
 
-<section id="about" style="background:#fff;padding:40px 20px;text-align:center;">
-<h2>About The Author</h2>
-<p><b>Kenneth Chiakwa, BSc, MSc - PhD Candidate, ESUT</b></p>
-<p>Owner: Kennessy Poultry Services, 23 Nwanmadu Street, Abakpa Nike Enugu</p>
+<section class="about" id="about">
+    <div class="container">
+        <h3>About The Author</h3>
+        <div class="about-text">
+            <h4>Kenneth Chiakwa, BSc, MSc - PhD Candidate</h4>
+            <p><b>Agricultural Economist | Educationist | Poultry Entrepreneur</b></p>
+            <p style="margin-top:15px; max-width:800px; margin-left:auto; margin-right:auto;">
+            Kenneth Chiakwa is an Agricultural Economist and a seasoned Secondary School Teacher with over 15 years of experience in classroom instruction and curriculum development. He holds a BSc and MSc in Agricultural Economics from the Enugu State University of Science and Technology, ESUT, and is currently a PhD Candidate.
+            <br><br>
+            As the CEO of <b>Kennessy Poultry Services</b> located at 23 Nwanmadu Street, Ugbene 2, Abakpa Nike, Enugu, he combines academic knowledge with practical, on-the-farm experience in both broiler and layers production. 
+            <br><br>
+            Through Kennessy Ebooks Store, he is committed to bridging the knowledge gap by providing practical, affordable, and easy-to-implement guides for farmers, students, and teachers across Africa.
+            </p>
+        </div>
+    </div>
 </section>
 
-<section id="contact" style="padding:40px 20px;text-align:center;">
-<h2>Contact Me</h2>
-<p><b>Email:</b> kennethchiakwa@gmail.com</p>
-<p><b>WhatsApp 1:</b> 07038635933</p>
-<p><b>WhatsApp 2:</b> 08144811019</p>
-<p><b>Facebook:</b> <a href="https://www.facebook.com/share/1Crbe79QLa/" target="_blank">Click Here</a></p>
+<section id="contact">
+    <div class="container">
+        <h3>Get In Touch</h3>
+        <div class="contact-info" style="text-align:center;">
+            <p><b>Email:</b> <a href="mailto:kennethchiakwa@gmail.com">kennethchiakwa@gmail.com</a></p>
+            <p><b>Mobile:</b> <a href="tel:07038635933" class="btn btn-call">Call 07038635933</a></p>
+            <p><b>WhatsApp:</b> <a href="https://wa.me/2348144811019" target="_blank" class="btn">Chat 08144811019</a></p>
+            <p><b>Facebook:</b> <a href="https://www.facebook.com/share/1Crbe79QLa/" target="_blank" class="btn">Follow Us</a></p>
+            <p><b>Address:</b> 23 Nwanmadu Street, Ugbene 2, Abakpa Nike, Enugu State, Nigeria</p>
+        </div>
+    </div>
 </section>
 
 <footer>
-<p>&copy; 2026 Kennessy Ebooks Store. All Rights Reserved.</p>
+    <div class="container">
+        <p>&copy; 2026 Kennessy Ebooks Store. All Rights Reserved. | Practical Knowledge for African Growth</p>
+    </div>
 </footer>
 
 </body>
